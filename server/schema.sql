@@ -3,28 +3,30 @@ CREATE DATABASE chat;
 USE chat;
 
 CREATE TABLE messages (
-  /* Describe your table here.*/
+
   id INT NOT NULL AUTO_INCREMENT,
   createdAt TIMESTAMP NOT NULL,
   text VARCHAR(100),
   roomId INT NOT NULL,
-  userId INT NOT NULL
+  userId INT NOT NULL,
+  PRIMARY KEY (id)
 );
 
-/* Create other tables and define schemas for them here! */
-
-
-/*tutorials_tbl(
-   tutorial_id INT NOT NULL AUTO_INCREMENT,
-   tutorial_title VARCHAR(100) NOT NULL,
-   tutorial_author VARCHAR(40) NOT NULL,
-   submission_date DATE,
-   PRIMARY KEY ( tutorial_id )
+CREATE TABLE users (  
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(20),
+  PRIMARY KEY (id)
 );
-*/
 
+
+CREATE TABLE rooms (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(20),
+  PRIMARY KEY(id)
+);
 
 /*  Execute this file from the command line by typing:
- *    mysql -u root < server/schema.sql
+ *  mysql -u root < server/schema.sql command creates 
+ *  the database but to access it do : mysql -u root -p        
  *  to create the database and the tables.*/
 

@@ -5,23 +5,22 @@ USE chat;
 CREATE TABLE messages (
 
   id INT NOT NULL AUTO_INCREMENT,
-  createdAt TIMESTAMP NOT NULL,
   text VARCHAR(100),
-  roomId INT NOT NULL,
-  userId INT NOT NULL,
+  roomId INT,
+  userId INT,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE users (  
   id INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(20),
+  userName VARCHAR(20),
   PRIMARY KEY (id)
 );
 
 
 CREATE TABLE rooms (
   id INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(20),
+  roomName VARCHAR(20),
   PRIMARY KEY(id)
 );
 
